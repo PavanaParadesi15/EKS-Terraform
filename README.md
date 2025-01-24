@@ -44,6 +44,22 @@ aws configure                  // give access key and secrect access key . These
 * When we write a particular module, provide a source for that which explains from where the module is taken. 
 
 
+* When we run " terraform init " commmand, terraform downloads all the modules and the all the modules information is put inside " .terraform "folder.
+* All the providers mentioned in "versions.tf" are downloaded by terraform
+
+The resources that will be created with this terraform scripts are:
+* VPC , IAM roles, IAM role policies, default security group, node security group , default network ACL , public and private subnets, route table private, default route table, EKS cluster security group, Internet Gateway, route table public , eip-nat (EIP- Elastic IP,  NAT- Network Address Translation) , NAT gateway, route table association, aws-eks managed node group, security group rules, EKS Cluster.
+
+* To create permissions, to view nodes on the eks cluster, we need to create access entry, grant permissions
+
+### Terraform commands 
+
+```
+terraform init                // initializes terraform in the project directory
+terraform plan                // creates a plan which shows what all the resources are getting created. 
+terraform apply               // applies the plan and creates resources
+terraform destroy             // destroys all the resources
+```
 
 
 
